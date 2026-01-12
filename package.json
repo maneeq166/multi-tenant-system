@@ -2,9 +2,15 @@
   "name": "multi-tenant-system",
   "version": "1.0.0",
   "description": "A production-grade backend system that supports multi-tenant organizations, role-based access control, relational task workflows, caching, and background job processing.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "dev:node": "nodemon dist/index.js",
+    "dev": "concurrently \"npm run build:watch\" \"npm run dev:node\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -19,6 +25,8 @@
   },
   "homepage": "https://github.com/maneeq166/multi-tenant-system#readme",
   "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.0.6",
     "@types/pg": "^8.16.0",
     "prisma": "^7.2.0",
@@ -28,7 +36,9 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
+    "@types/bcrypt": "^6.0.0",
     "bcrypt": "^6.0.0",
+    "concurrently": "^9.2.1",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
