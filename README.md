@@ -10,57 +10,57 @@ This project is designed to demonstrate real backend engineering skills: archite
 
 ### Authentication & Security
 
-* JWT-based authentication
-* Secure password hashing (bcrypt)
-* Protected routes with middleware
-* Org-scoped request context
+- JWT-based authentication
+- Secure password hashing (bcrypt)
+- Protected routes with middleware
+- Org-scoped request context
 
 ---
 
 ### Multi-Tenancy
 
-* Multiple organizations per user
-* Strict org data isolation
-* All major entities scoped to organizations
-* Prevents cross-org data leaks
+- Multiple organizations per user
+- Strict org data isolation
+- All major entities scoped to organizations
+- Prevents cross-org data leaks
 
 ---
 
 ### Role-Based Access Control (RBAC)
 
-* ADMIN and MEMBER roles
-* Role validation middleware
-* Privilege-based route protection
+- ADMIN and MEMBER roles
+- Role validation middleware
+- Privilege-based route protection
 
 ---
 
 ### Core Product
 
-* Organizations
-* Boards
-* Lists
-* Tasks
-* Assignment and filtering
-* Pagination and sorting
+- Organizations
+- Boards
+- Lists
+- Tasks
+- Assignment and filtering
+- Pagination and sorting
 
 ---
 
 ### Production Engineering
 
-* Redis caching for heavy reads
-* BullMQ background workers
-* Audit logging pipeline
-* Email and invite jobs
-* Cache invalidation strategy
+- Redis caching for heavy reads
+- BullMQ background workers
+- Audit logging pipeline
+- Email and invite jobs
+- Cache invalidation strategy
 
 ---
 
 ### Quality & Testing
 
-* Jest and Supertest integration tests
-* Auth and RBAC enforcement tests
-* Org isolation tests
-* Task lifecycle tests
+- Jest and Supertest integration tests
+- Auth and RBAC enforcement tests
+- Org isolation tests
+- Task lifecycle tests
 
 ---
 
@@ -121,14 +121,14 @@ src/
 
 Main entities:
 
-* User
-* Organization
-* OrgMember
-* Board
-* List
-* Task
-* AuditLog
-* Invite
+- User
+- Organization
+- OrgMember
+- Board
+- List
+- Task
+- AuditLog
+- Invite
 
 Every major table contains an orgId to enforce tenant isolation.
 
@@ -237,9 +237,9 @@ Flow:
 
 BullMQ workers handle:
 
-* Email invites
-* Audit log persistence
-* Daily task summaries
+- Email invites
+- Audit log persistence
+- Daily task summaries
 
 This decouples slow operations from API latency.
 
@@ -247,28 +247,27 @@ This decouples slow operations from API latency.
 
 ## Testing Strategy
 
-* Jest and Supertest
-* Isolated test database
-* Coverage includes:
-
-  * Auth flows
-  * Org isolation
-  * RBAC enforcement
-  * Task lifecycle
-  * Pagination correctness
+- Jest and Supertest
+- Isolated test database
+- Coverage includes:
+  - Auth flows
+  - Org isolation
+  - RBAC enforcement
+  - Task lifecycle
+  - Pagination correctness
 
 ---
 
 ## Tech Stack
 
-* Node.js
-* TypeScript
-* Express
-* Prisma ORM
-* PostgreSQL
-* Redis
-* BullMQ
-* Jest and Supertest
+- Node.js
+- TypeScript
+- Express
+- Prisma ORM
+- PostgreSQL
+- Redis
+- BullMQ
+- Jest and Supertest
 
 ---
 
@@ -306,20 +305,20 @@ npm run dev
 
 This backend focuses on:
 
-* Multi-tenant system design
-* Secure authentication flows
-* Role enforcement
-* Scalable architecture
-* Production-grade data modeling
-* Event-driven backend thinking
+- Multi-tenant system design
+- Secure authentication flows
+- Role enforcement
+- Scalable architecture
+- Production-grade data modeling
+- Event-driven backend thinking
 
 ---
 
 ## Future Extensions
 
-* Soft deletes
-* Activity feed
-* Webhooks
-* Rate limiting
-* API documentation
-* Metrics and monitoring
+- Soft deletes
+- Activity feed
+- Webhooks
+- Rate limiting
+- API documentation
+- Metrics and monitoring
