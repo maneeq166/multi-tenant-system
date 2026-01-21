@@ -1,4 +1,5 @@
-import { prisma } from "../../lib/prisma.js";
+//src/services/auth.services.ts
+import { prisma } from "../lib/prisma.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 export const registerService = async (email: string, password: string) => {
@@ -59,10 +60,15 @@ export const loginService = async (email: string, password: string) => {
       message: "Wrong password",
       statusCode: 400,
     };
-  }
+  }  const token = jwt.sign(
+  { id: user.id },
+  process.env.JWT_SECRET!,
+  { expiresIn: "7d" }
+);
+
 
   return {
-    data: jwt.sign({ id: user.id, email: user.email }),
+    data: token,
     message: "Logged in",
     statusCode: 200,
   };

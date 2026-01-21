@@ -1,7 +1,7 @@
 import { loginService, registerService } from "../services/auth.service.js";
 import { asyncHandler } from "../utils/asyncHandler/index.js";
 import type { Request, Response, NextFunction } from "express";
-import ApiResponse from "../utils/apiResponse/index.js";
+import {ApiResponse} from "../utils/apiResponse/index.js";
 
 export const registerController = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
