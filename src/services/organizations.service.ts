@@ -25,5 +25,4 @@ export const createOrganizationService = async (ownerId:number,name:string)=>{
         statusCode:201,
         message:"Organization created!"
     }
-
 }
