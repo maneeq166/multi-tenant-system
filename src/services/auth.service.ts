@@ -60,12 +60,12 @@ export const loginService = async (email: string, password: string) => {
       message: "Wrong password",
       statusCode: 400,
     };
-  }  const token = jwt.sign(
-  { id: user.id },
-  process.env.JWT_SECRET!,
-  { expiresIn: "7d" }
-);
-
+  }
+  const token = jwt.sign(
+    { id: user.id, email: user.email },
+    process.env.JWT_SECRET!,
+    { expiresIn: "7d" },
+  );
 
   return {
     data: token,

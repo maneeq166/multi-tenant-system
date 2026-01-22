@@ -29,3 +29,25 @@ model Organization {
 
   user User? @relation(fields: [ownerId],references: [id])
 }
+
+enum Role{
+  USER 
+  ADMIN
+}
+
+model OrgMember {
+  id Int @id @default(autoincrement())
+  orgId Int 
+  userId Int
+  createdAt DateTime @default(now())
+  role Role @default(USER)
+}
+model AuditLog {
+  id Int @id @default(autoincrement())
+  orgId Int
+  actorId Int 
+  action String 
+  entity String
+  entityId Int
+  createdAt DateTime @default(now())
+}
